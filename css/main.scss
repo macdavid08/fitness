@@ -1,0 +1,254 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Radio+Canada:wght@300;400;500;600;700&family=Roboto&display=swap');
+body {
+    margin: 1em;
+    font-family: 'poppins';
+ }
+
+ a {
+    text-decoration: none;
+    font-size: 1.3rem;
+ }
+
+ .img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: url(../images/red.jpg);
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    z-index: -1;
+    background-position-x: 20%;
+    background-position-y: 20%;
+    animation: introLoad 3.5s forwards;
+ }
+
+ .logo {
+    color: white;
+    font-weight: bold;
+ }
+
+ header {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+
+    span i {
+        color: white;
+        font-size: 1.2rem;
+        cursor: pointer;
+        margin-top: .3em;
+    }
+
+    p{
+        font-size: 1.4rem;
+        box-sizing: border-box;
+    }
+ }
+
+ nav {
+    position: fixed;
+    right: 0;
+    top: 0;
+    height: 100vh;
+    width: 50%;
+    background: white;
+    z-index: 999;
+    text-transform: uppercase;
+    transform: translateX(100%);
+    transition: transform .5s ease-in-out;
+
+    ul{
+        list-style-type: none;
+        padding: 0;
+        margin-top: 7em;
+    }
+
+
+    span {
+        float: right;
+        margin: 1.5em;
+    }
+
+    span i {
+        color: black;
+        font-size: 2rem;
+    }
+ }
+
+ section.hero {
+    color: white;
+    height: 90vh;
+
+    span {
+        position: absolute;
+        bottom: 0;
+    }
+
+    span i {
+        font-size: 1.5rem;
+        animation: moveArrow 1s alternate-reverse infinite;
+    }
+
+    h1 {
+        font-size: 3rem;
+        margin-top: 2em;
+        line-height: 3rem;
+    }
+ }
+
+ nav ul a{
+    color: black;
+    padding: .75em 2em;
+    display: block;
+}
+
+nav ul a:hover{
+    background: rgb(239, 241, 236);
+}
+
+.more-info {
+    img{
+        width: 100%;
+        object-fit: cover;
+        height: 15em;
+    }
+
+    .lw{
+        font-weight: bold;
+        font-size: 1.25rem;
+    }
+
+    p {
+        left: 1.5rem;
+    }
+    
+}
+
+.open-nav {
+    transform: translateX(0);
+}
+
+
+
+@media only screen and (min-width: 680px) {
+    body {
+        margin: 1em 4em;
+        font-family: 'poppins';
+     }
+    
+}
+
+@media only screen and (min-width: 920px) {
+    .toggle {
+        display: none;
+    }
+
+    nav{
+        transform: translateX(0);
+        position: unset;
+        display: block;
+        width: auto;
+        height: auto;
+        background: none;
+
+        .close {
+            display: none;
+        }
+
+        ul{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 0;
+        }
+        li a{
+            color: white;
+            font-size: 1rem;
+            padding: .5em 1.5em;
+        }
+
+        li a:hover {
+            background: none;
+            text-decoration: underline;
+        }
+    }
+
+    .img {
+        left: unset;
+        right: 0;
+        width: 50%;
+        height: 42em;
+    }
+
+    .logo {
+        color: black;
+
+        span {
+            color: red ;
+        }
+    }
+
+    section.hero {
+        color: black;
+        width: 40%;
+
+        span i {
+            color: black;
+        }
+    }
+
+    .more-info {
+        margin-top: 5em;
+    }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(2, auto);
+            gap: 3em;
+            margin-bottom: 7em;
+
+            img {
+                width: 25em;
+            }
+
+            .content {
+                text-align: right;
+                width:25em;
+            }  
+
+        }
+    
+}
+
+@media only screen and (min-width: 1200px) {
+    .wrapper {
+        width: 1200px;
+        margin: auto;
+    }
+
+    .features {
+        gap:0;
+    }
+
+}
+
+@keyframes introLoad {
+    from {
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
+
+    to {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+}
+
+@keyframes moveArrow {
+    from {
+        transform: translateY(-30px);
+    }
+
+    to {
+        transform: translateY(0px);
+    }
+}
